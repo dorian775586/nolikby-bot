@@ -6,6 +6,7 @@ import requests
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.enums import ParseMode
+from aiogram.client.default import DefaultBotProperties
 
 load_dotenv()
 
@@ -19,7 +20,7 @@ BACKEND_URL = os.getenv("BACKEND_URL")
 if not BACKEND_URL:
     raise ValueError("BACKEND_URL is not set in environment variables")
 
-bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
 # Включение логирования
