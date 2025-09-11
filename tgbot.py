@@ -34,7 +34,7 @@ async def handle_message(message: types.Message):
         logging.info(f"Received message: {message.text}")
         try:
             # Заглушка, чтобы деплой прошел
-            response = requests.get("https://google.com")
+            response = requests.get("[https://google.com](https://google.com)")
             response.raise_for_status()
             await message.answer(f"Бот получил ваше сообщение: '{message.text}'\n\nБэкенд запущен!")
         except requests.exceptions.RequestException as e:
@@ -49,12 +49,12 @@ eof
 
 ---
 
-### Следующие шаги
+### Ваши следующие шаги
 
-1.  **Обновите** файл `tgbot.py` на вашем компьютере, заменив его содержимое на код выше.
-2.  Загрузите изменения на GitHub с помощью этих команд:
+1.  **Обновите** ваш файл `tgbot.py` на локальном компьютере, заменив его содержимое на код выше.
+2.  Выполните команды Git, чтобы отправить изменения на GitHub:
     ```bash
     git add tgbot.py
-    git commit -m "Восстановление функции main в tgbot.py"
+    git commit -m "Удаление маркера eof из tgbot.py"
     git push -u origin master
     
